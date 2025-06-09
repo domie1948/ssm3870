@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FudaoyuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FudaoyuanEntity" id="fudaoyuanMap">
+        <result property="fudaoyuanzhanghao" column="fudaoyuanzhanghao"/>
+        <result property="mima" column="mima"/>
+        <result property="fudaoyuanxingming" column="fudaoyuanxingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="fudaoyuanshouji" column="fudaoyuanshouji"/>
+        <result property="chushengriqi" column="chushengriqi"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="youxiang" column="youxiang"/>
+        <result property="suoshuyuanxi" column="suoshuyuanxi"/>
+        <result property="touxiang" column="touxiang"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FudaoyuanVO" >
+		SELECT * FROM fudaoyuan  fudaoyuan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FudaoyuanVO" >
+		SELECT  fudaoyuan.* FROM fudaoyuan  fudaoyuan
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FudaoyuanView" >
+
+		SELECT  fudaoyuan.* FROM fudaoyuan  fudaoyuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FudaoyuanView" >
+		SELECT * FROM fudaoyuan  fudaoyuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
